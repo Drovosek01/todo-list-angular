@@ -1,0 +1,25 @@
+<div
+  class="list-group-item flex-column align-items-start"
+  [ngClass]="{
+    'list-group-item-danger': task.isSolved
+  }"
+  >
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1">{{task.name}}</h5>
+    <small>{{task.date}}</small>
+  </div>
+  <p class="mb-1">{{task.description}}</p>
+  <button
+    type="button"
+    class="btn btn-danger btn-sm"
+    (click)="onDelete()"
+    >
+    Delete</button>
+  <button
+    type="button"
+    class="btn btn-secondary btn-sm"
+    [disabled]="task.isSolved"
+    (click)="onSolved()"
+    >
+    Solved</button>
+</div>
