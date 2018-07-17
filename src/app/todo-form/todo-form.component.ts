@@ -30,42 +30,28 @@ export class TodoFormComponent implements OnInit {
     return result;
   }
 
+
+
   onSubmit() {
-    const controls = this.reactiveForm.controls;
-      if (this.reactiveForm.invalid) {
-      Object.keys(controls)
-       .forEach(controlName => controls[controlName].markAsTouched());
-       return;
-      }
+    if (this.reactiveForm.invalid) {
+      return;
+    }
+
+    const title: string = this.reactiveForm.value.title;
+    const description: string = this.reactiveForm.value.description;
+
+      const date = moment().format('DD.MM.YY | HH.MM.SS');
+      const task = new Task(title, date, description, false);
+      this.service.addTask(task);
+
+      this.reactiveForm.reset();
   }
-
-
-
-  // private id: number = 2;
-  taskName: string = '';
-  taskDescription: string = '';
 
   // @Output() addTask = new EventEmitter<Task>();
   constructor(private service: TasksService, private fb: FormBuilder) { }
 
-  onAdd() {
-    if (this.taskName === '') return;
-
-    // this.id = ++this.id;
-
-    const date = moment().format('DD.MM.YY | HH.MM.SS');
-    const task = new Task(this.taskName, date, this.taskDescription, false);
-
-    // this.addTask.emit(task);
-    // this.store.dispatch(new AddTask(task));
-    this.service.addTask(task);
-
-    this.taskDescription = '';
-    this.taskName = '';
-  }
-
   onLoad() {
-    this.service.LoadTasks();
+    this.service.loadTasks();
   }
 
 }

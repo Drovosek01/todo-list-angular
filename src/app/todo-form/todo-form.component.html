@@ -1,4 +1,4 @@
-<form [formGroup]="reactiveForm">
+<form [formGroup]="reactiveForm" #justform>
 
 <div class="form-group">
   <label for="task-name">Task title</label>
@@ -6,11 +6,12 @@
     type="text"
     class="form-control"
     id="task-title"
-    [(ngModel)]="taskName"
+    
     placeholder="Your task title"
     formControlName="title"
+
   >
-  <div *ngIf="isControlInvalid('title')">
+  <div *ngIf="isControlInvalid('title') && justform.submit">
     Заголовок не должен быть пустой и его длина должна быть > 3 символов
   </div>
 </div>
@@ -21,13 +22,13 @@
     type="text"
     class="form-control"
     id="task-title"
-    [(ngModel)]="taskDescription"
+    
     placeholder="Your task description"
     formControlName="description"
   >
 </div>
 
-<button type="button" class="btn btn-outline-primary" (click)="onAdd()">Add task</button>
+<button type="submit" class="btn btn-outline-primary" (click)="onSubmit()">Add task</button>
 <button type="button" class="btn btn-outline-warning" (click)="onLoad()">Load tasks</button>
 
 </form>

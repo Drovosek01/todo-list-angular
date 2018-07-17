@@ -21,7 +21,7 @@ import { Observable } from 'rxjs/Observable';
             .map((response: Response) => response.json());
     }
 
-    LoadTasks(): void {
+    loadTasks(): void {
         this.preloadTasks()
         .toPromise()
         .then((tasks: Task[]) => {
