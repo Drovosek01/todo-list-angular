@@ -12,6 +12,7 @@ import { HttpModule } from '@angular/http';
 import { EffectsModule } from '@ngrx/effects';
 import { TasksEffect } from './redux/tasks.effects';
 // import { HttpClient } from 'selenium-webdriver/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TasksEffect } from './redux/tasks.effects';
     FormsModule,
     EffectsModule.forRoot([TasksEffect]),
     StoreModule.forRoot({taskPage: tasksReducer}),
-    HttpModule
+    HttpModule,
+    ReactiveFormsModule
   ],
   providers: [TasksService],
   bootstrap: [AppComponent]

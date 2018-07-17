@@ -1,3 +1,5 @@
+<form [formGroup]="reactiveForm">
+
 <div class="form-group">
   <label for="task-name">Task title</label>
   <input
@@ -5,8 +7,14 @@
     class="form-control"
     id="task-title"
     [(ngModel)]="taskName"
-    placeholder="Your task title">
+    placeholder="Your task title"
+    formControlName="title"
+  >
+  <div *ngIf="isControlInvalid('title')">
+    Заголовок не должен быть пустой и его длина должна быть > 3 символов
+  </div>
 </div>
+
 <div class="form-group">
   <label for="task-name">Task description</label>
   <input
@@ -14,8 +22,12 @@
     class="form-control"
     id="task-title"
     [(ngModel)]="taskDescription"
-    placeholder="Your task description">
+    placeholder="Your task description"
+    formControlName="description"
+  >
 </div>
 
 <button type="button" class="btn btn-outline-primary" (click)="onAdd()">Add task</button>
 <button type="button" class="btn btn-outline-warning" (click)="onLoad()">Load tasks</button>
+
+</form>
