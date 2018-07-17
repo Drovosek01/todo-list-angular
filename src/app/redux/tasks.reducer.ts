@@ -18,6 +18,7 @@ export function tasksReducer(state = initialState, action: TaskAction) {
             };
         case TASK_ACTION.UPDATE_TASK:
         const idx = state.tasks.findIndex(c => c.id === action.payload.id);
+        // const idx = state.tasks.splice(action.payload.id, 1);
         state.tasks[idx].isSolved = true;
             return {
                 ...state,

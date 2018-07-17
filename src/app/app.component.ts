@@ -19,13 +19,4 @@ export class AppComponent implements OnInit {
     // this.store.select('taskPage').subscribe(({tasks}) => this.tasks = tasks);
     this.tasksState = this.store.select('taskPage');
   }
-
-  // onAdd(task: Task) {
-  //   this.tasks.push(task);
-  // }
-
-  onDelete(task: Task) {
-    // this.tasks = this.tasks.filter(t => t.id !== task.id);
-    this.tasks = this.tasks.splice(task.id, 1);
-  }
 }
