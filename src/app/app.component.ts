@@ -25,6 +25,7 @@ export class AppComponent implements OnInit {
   // }
 
   onDelete(task: Task) {
-    this.tasks = this.tasks.filter(t => t.id !== task.id);
+    // this.tasks = this.tasks.filter(t => t.id !== task.id);
+    this.tasks = this.tasks.splice(task.id, 1);
   }
 }

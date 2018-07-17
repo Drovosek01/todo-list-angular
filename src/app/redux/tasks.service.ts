@@ -47,7 +47,7 @@ import { Observable } from 'rxjs/Observable';
             });
     }
 
-    updateTask(task: TasksService) {
+    updateTask(task: Task) {
         this.http.put(TasksService.BASE_URL + 'tasks/' + task.id, task)
             .map((response: Response) => response.json())
             .toPromise()

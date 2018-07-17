@@ -22,7 +22,7 @@ export class TodoFormComponent {
     // this.id = ++this.id;
 
     const date = moment().format('DD.MM.YY | HH.MM.SS');
-    const task = new Task(this.taskName, date, this.taskDescription);
+    const task = new Task(this.taskName, date, this.taskDescription, false);
 
     // this.addTask.emit(task);
     // this.store.dispatch(new AddTask(task));
