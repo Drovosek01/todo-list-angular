@@ -1,5 +1,5 @@
 <div class="container">
-  <app-todo-form>
+  <!-- <app-todo-form>
   </app-todo-form>
   
   <div class="list-group">
@@ -7,8 +7,8 @@
       [task]="_task"
       *ngFor="let _task of (tasksState | async).tasks"
     >
-
+    
     </app-task>
-  </div>
-  
+  </div> -->
+  <router-outlet></router-outlet>
 </div>

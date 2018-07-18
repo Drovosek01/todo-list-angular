@@ -30,8 +30,6 @@ export class TodoFormComponent implements OnInit {
     return result;
   }
 
-
-
   onSubmit() {
     if (this.reactiveForm.invalid) {
       return;
