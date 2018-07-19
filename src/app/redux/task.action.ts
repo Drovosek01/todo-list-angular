@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Task } from '../todo-form/task.model';
+import { Task } from '../views/todos/todo-form/task.model';
 
 export namespace TASK_ACTION {
     export const ADD_TASK = 'ADD_TASK';

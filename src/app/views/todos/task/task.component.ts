@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Task } from '../todo-form/task.model';
 // import { EventEmitter } from '@angular/core';
-import { AppState } from '../redux/app.state';
+import { AppState } from '../../../redux/app.state';
 import { Store } from '@ngrx/store';
-import { DeleteTask, UpdateTask } from '../redux/task.action';
-import { TasksService } from '../redux/tasks.service';
+import { DeleteTask, UpdateTask } from '../../../redux/task.action';
+import { TasksService } from '../../../redux/tasks.service';
 
 @Component({
   selector: 'app-task',

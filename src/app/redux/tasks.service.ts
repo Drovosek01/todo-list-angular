@@ -4,7 +4,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from './app.state';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
-import { Task } from '../todo-form/task.model';
+import { Task } from '../views/todos/todo-form/task.model';
 import { LoadTasks, AddTask, DeleteTask, UpdateTask } from './task.action';
 import { Observable } from 'rxjs/Observable';
 // import { HttpClient } from 'selenium-webdriver/http';

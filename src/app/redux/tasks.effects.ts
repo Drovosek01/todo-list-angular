@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { TASK_ACTION, AddTask } from './task.action';
-import { Task } from '../todo-form/task.model';
+import { Task } from '../views/todos/todo-form/task.model';
 import { TasksService } from './tasks.service';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/mergeMap';

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from './task.model';
 import * as moment from 'moment';
-import { TasksService } from '../redux/tasks.service';
+import { TasksService } from '../../../redux/tasks.service';
 import { Validator, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({

@@ -1,4 +1,4 @@
-import { Task } from '../todo-form/task.model';
+import { Task } from '../views/todos/todo-form/task.model';
 
 export interface AppState {
     taskPage: {

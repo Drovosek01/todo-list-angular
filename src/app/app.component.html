@@ -1,4 +1,18 @@
 <div class="container">
+  <h1 align="center">TODO-лист</h1>
+<nav>
+  <ul align="center" class="myLinks">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <a routerLink="">Гланвая</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="details">Список всех задач</a>
+    </li>
+    <li routerLinkActive="active">
+      <a routerLink="addingTask">Добавить задачу</a>
+    </li>
+  </ul>
+</nav>
   <!-- <app-todo-form>
   </app-todo-form>
   
