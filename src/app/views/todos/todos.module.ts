@@ -5,8 +5,8 @@ import { TodosRoutingModule } from './todos-routing.module';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TaskComponent } from './task/task.component';
 import { AddingTaskComponent } from './adding-task/adding-task.component';
-import { TaskDetailsComponent } from './task-details/task-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TasksListComponent } from './tasks-list/tasks-list.component';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TodoFormComponent,
     TaskComponent,
     AddingTaskComponent,
-    TaskDetailsComponent
+    TasksListComponent
   ]
 })
 export class TodosModule { }

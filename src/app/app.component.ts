@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Task, Tasks } from './todo-form/task.model';
+import { Task, Tasks } from './views/todos/todo-form/task.model';
 import { Store } from '@ngrx/store';
 import { AppState } from './redux/app.state';
 import { Observable } from 'rxjs';

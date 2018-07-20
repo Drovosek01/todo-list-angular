@@ -12,6 +12,7 @@ import { TasksEffect } from './redux/tasks.effects';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { TodosModule } from './views/todos/todos.module';
+// import { TasksListComponent } from './views/todos/tasks-list/tasks-list.component';
 
 const appRoutes: Routes = [
   // {path: '', component: AppComponent},
