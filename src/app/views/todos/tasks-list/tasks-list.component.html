@@ -2,8 +2,18 @@
   tasks-list works!
 </p>
 
+<app-task
+  [task]="_task"
+  *ngFor="let _task of tasks | async"
+>
+</app-task>
 
-<!-- <div class="list-group">
+<!-- <button type="button" class="btn btn-outline-warning m-1" (click)="onLoad()">Load tasks</button> -->
+
+<!-- 
+  *ngFor="let _task from tasks"
+  
+  <div class="list-group">
   <app-task
     [task]="_task"
     *ngFor="let _task of (tasksState | async).tasks"

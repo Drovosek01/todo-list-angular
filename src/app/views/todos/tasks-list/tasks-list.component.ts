@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Task, Tasks } from '../todo-form/task.model';
+import { Observable } from 'rxjs';
+import { TasksService } from '../../../redux/tasks.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../redux/app.state';
 
 @Component({
   selector: 'app-tasks-list',
@@ -7,9 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksListComponent implements OnInit {
 
-  constructor() { }
+  public tasks: Observable<Task[]> = this._store$.map((state) => {
+    return state.taskPage.tasks;
+  });
+
+  constructor(private service: TasksService, private readonly _store$: Store<AppState>) {
+    this.service.loadTasks();
+  }
 
   ngOnInit() {
   }
+
+  onLoad() {
+    this.service.loadTasks();
+    }
 
 }

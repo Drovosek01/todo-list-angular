@@ -1,53 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from '../todo-form/task.model';
-import * as moment from 'moment';
-import { TasksService } from '../../../redux/tasks.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Task, Tasks } from '../todo-form/task.model';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../redux/app.state';
+import { Observable } from 'rxjs';
+
 @Component({
   selector: 'app-adding-task',
   templateUrl: './adding-task.component.html',
   styleUrls: ['./adding-task.component.css']
 })
 export class AddingTaskComponent implements OnInit {
-  reactiveForm: FormGroup;
+
+  public tasks: Task[] = [];
+  public tasksState: Observable<Tasks>;
+
+  constructor(private store: Store<AppState>) {}
 
   ngOnInit() {
-    this.initForm();
+    // this.store.select('taskPage').subscribe(({tasks}) => this.tasks = tasks);
+    this.tasksState = this.store.select('taskPage');
   }
 
-  initForm() {
-    this.reactiveForm = this.fb.group({
-      title: ['', [Validators.required, Validators.minLength(3)]],
-      description: ['', [Validators.minLength(10)]]
-    });
-  }
+  // onAdd(task: Task) {
+  //   this.tasks.push(task);
+  // }
 
-  isControlInvalid(controlName: string): boolean {
-    const control = this.reactiveForm.controls[controlName];
-    const result = control.invalid && control.touched;
-    return result;
-  }
-
-  onSubmit() {
-    if (this.reactiveForm.invalid) {
-      return;
-    }
-
-    const title: string = this.reactiveForm.value.title;
-    const description: string = this.reactiveForm.value.description;
-
-      const date = moment().format('DD.MM.YY | HH.MM.SS');
-      const task = new Task(title, date, description, false);
-      this.service.addTask(task);
-
-      this.reactiveForm.reset();
-  }
-
-  // @Output() addTask = new EventEmitter<Task>();
-  constructor(private service: TasksService, private fb: FormBuilder) { }
-
-  onLoad() {
-    this.service.loadTasks();
+  onDelete(task: Task) {
+    // this.tasks = this.tasks.filter(t => t.id !== task.id);
+    this.tasks = this.tasks.splice(task.id, 1);
   }
 
 }
