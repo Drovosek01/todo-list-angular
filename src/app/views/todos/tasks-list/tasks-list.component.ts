@@ -11,6 +11,7 @@ import { AppState } from '../../../redux/app.state';
   styleUrls: ['./tasks-list.component.css']
 })
 export class TasksListComponent implements OnInit {
+  searchText = '';
 
   public tasks: Observable<Task[]> = this._store$.map((state) => {
     return state.taskPage.tasks;

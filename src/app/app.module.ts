@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
+
 const appRoutes: Routes = [
   // {path: '', component: AppComponent},
   {path: '**', redirectTo: '/'}
